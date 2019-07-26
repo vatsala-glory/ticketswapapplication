@@ -7,7 +7,7 @@ import { approve, decline, resetState } from '../manage.action';
 @Component({
   selector: 'app-my-counter',
   templateUrl: './my-counter.component.html',
-  styleUrls: ['./my-counter.component.css'],
+  styleUrls: ['./my-counter.component.scss'],
 })
 export class MyCounterComponent implements OnInit {
   count$: Observable<number>;

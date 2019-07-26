@@ -6,7 +6,7 @@ import { approve, decline, resetState } from '../manage.action';
 @Component({
   selector: 'app-manage-account',
   templateUrl: './manage-account.component.html',
-  styleUrls: ['./manage-account.component.css']
+  styleUrls: ['./manage-account.component.scss']
 })
 export class ManageAccountComponent implements OnInit {
    state$: Observable<string>;

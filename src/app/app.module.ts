@@ -1,11 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './counter.reducer';
 import { stateReducer } from './manage.reducer';
+import { HeaderModuleModule } from './header-module/header-module.module';
 import { MyCounterComponent } from './my-counter/my-counter.component';
 import { ManageAccountComponent } from './manage-account/manage-account.component';
 
@@ -13,7 +15,9 @@ import { ManageAccountComponent } from './manage-account/manage-account.componen
   declarations: [AppComponent, MyCounterComponent, ManageAccountComponent],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({ count: counterReducer, state: stateReducer })
+    HeaderModuleModule,
+    StoreModule.forRoot({ count: counterReducer, state: stateReducer }),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent],
