@@ -5,15 +5,20 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 
 import { StoreModule } from '@ngrx/store';
+import { AppRoutingModule } from './app.routing.module';
 import { counterReducer } from './counter.reducer';
 import { stateReducer } from './manage.reducer';
 import { HeaderModuleModule } from './header-module/header-module.module';
 import { MyCounterComponent } from './my-counter/my-counter.component';
 import { ManageAccountComponent } from './manage-account/manage-account.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+
 
 @NgModule({
-  declarations: [AppComponent, MyCounterComponent, ManageAccountComponent],
+  declarations: [AppComponent, MyCounterComponent, ManageAccountComponent, PageNotFoundComponent],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     HeaderModuleModule,
     StoreModule.forRoot({ count: counterReducer, state: stateReducer }),
