@@ -4,11 +4,11 @@ import { Observable } from 'rxjs';
 import { approve, decline, resetState } from '../manage.action';
 
 @Component({
-  selector: 'app-manage-account',
-  templateUrl: './manage-account.component.html',
-  styleUrls: ['./manage-account.component.scss']
+  selector: 'app-home-page',
+  templateUrl: './home-page.component.html',
+  styleUrls: ['./home-page.component.scss']
 })
-export class ManageAccountComponent implements OnInit {
+export class HomePageComponent implements OnInit {
    state$: Observable<string>;
    state: String;
 

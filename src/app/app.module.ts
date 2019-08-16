@@ -10,13 +10,13 @@ import { counterReducer } from './counter.reducer';
 import { stateReducer } from './manage.reducer';
 import { HeaderModuleModule } from './header-module/header-module.module';
 import { MyCounterComponent } from './my-counter/my-counter.component';
-import { ManageAccountComponent } from './manage-account/manage-account.component';
+import { HomePageComponent } from './home-page/home-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, MyCounterComponent, ManageAccountComponent, PageNotFoundComponent],
+  declarations: [AppComponent, MyCounterComponent, HomePageComponent, PageNotFoundComponent],
   imports: [
     AppRoutingModule,
     BrowserModule,
