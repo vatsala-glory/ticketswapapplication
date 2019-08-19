@@ -19,4 +19,18 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 500px;
+
+  .homePage-tiles{
+    display:flex;
+    flex-wrap: wrap;
+    width:100%;
+
+    .homePage-tiles__Content{
+      width:33%;
+      min-height:200px;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }

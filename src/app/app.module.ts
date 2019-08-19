@@ -12,11 +12,12 @@ import { HeaderModuleModule } from './header-module/header-module.module';
 import { MyCounterComponent } from './my-counter/my-counter.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { TicketTilesComponent } from './ticket-tiles/ticket-tiles.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, MyCounterComponent, HomePageComponent, PageNotFoundComponent],
+  declarations: [AppComponent, MyCounterComponent, HomePageComponent, PageNotFoundComponent, TicketTilesComponent],
   imports: [
     AppRoutingModule,
     BrowserModule,
