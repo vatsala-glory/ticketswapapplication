@@ -13,11 +13,12 @@ import { MyCounterComponent } from './my-counter/my-counter.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TicketTilesComponent } from './ticket-tiles/ticket-tiles.component';
+import { TicketResultComponent } from './ticket-result/ticket-result.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, MyCounterComponent, HomePageComponent, PageNotFoundComponent, TicketTilesComponent],
+  declarations: [AppComponent, MyCounterComponent, HomePageComponent, PageNotFoundComponent, TicketTilesComponent, TicketResultComponent],
   imports: [
     AppRoutingModule,
     BrowserModule,

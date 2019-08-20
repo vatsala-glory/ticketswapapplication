@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { approve, decline, resetState } from '../manage.action';
@@ -12,7 +13,7 @@ export class HomePageComponent implements OnInit {
    state$: Observable<string>;
    state: String;
 
-  constructor(private store: Store<{ state: string }>) {
+  constructor(private store: Store<{ state: string }>, private router: Router) {
     this.state$ = store.pipe(select('state'));
    }
 
@@ -32,5 +33,9 @@ export class HomePageComponent implements OnInit {
 
   reset() {
     this.store.dispatch(resetState());
+  }
+
+  showResults(routeState){
+    this.router.navigate(['./resultPage'], routeState);
   }
 }

@@ -13,7 +13,7 @@ export class TicketTilesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.tile);
+  
   }
 
 }
