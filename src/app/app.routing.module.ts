@@ -12,9 +12,9 @@ const appRoutes: Routes = [
     component: HomePageComponent,
   },
   {
-    path:'resultPage',
+    path:'resultPage/:data',
     pathMatch: 'full',
-    component: TicketResultComponent
+    component:TicketResultComponent
   }
 ];
 

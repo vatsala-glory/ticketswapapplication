@@ -36,6 +36,6 @@ export class HomePageComponent implements OnInit {
   }
 
   showResults(routeState){
-    this.router.navigate(['./resultPage'], routeState);
+    this.router.navigate(['./resultPage/'+ routeState], {state: {data:routeState}});
   }
 }
