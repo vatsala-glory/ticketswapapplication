@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { ServiceInterceptor } from './service.interceptor';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
@@ -20,13 +22,20 @@ import { TicketResultComponent } from './ticket-result/ticket-result.component';
 @NgModule({
   declarations: [AppComponent, MyCounterComponent, HomePageComponent, PageNotFoundComponent, TicketTilesComponent, TicketResultComponent],
   imports: [
+    HttpClientModule,
     AppRoutingModule,
     BrowserModule,
     HeaderModuleModule,
     StoreModule.forRoot({ count: counterReducer, state: stateReducer }),
     NgbModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ServiceInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
