@@ -1,3 +1,20 @@
 {
-    "id":"0111"
+    "data": [
+        {
+            "id": "0001",
+            "name": "Milkshake Festival",
+            "location":"Dok",
+            "eventStart": "03/10/2019",
+            "eventEnd": "04/10/2019",
+            "ticketsAvaialble": 9
+        },
+        {
+            "id": "0002",
+            "name": "U2 Concert Festival",
+            "location":"New RAI",
+            "eventStart": "03/10/2019",
+            "eventEnd": "04/10/2019",
+            "ticketsAvaialble": 3
+        }
+    ]
 }

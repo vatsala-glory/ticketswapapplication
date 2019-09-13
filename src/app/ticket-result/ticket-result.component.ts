@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MusicService } from './music.service';
+import { DataService } from './data.service';
+import { Event } from './event';
 
 @Component({
   selector: 'app-ticket-result',
@@ -9,12 +10,16 @@ import { MusicService } from './music.service';
 })
 export class TicketResultComponent implements OnInit {
 
-  constructor( private route: ActivatedRoute, private musicService : MusicService) { }
+  constructor( private route: ActivatedRoute, private dataService : DataService) { }
+
+  availableEventlist: Event;
 
   ngOnInit() {
-    //Inject a service to fetch the data for param.
     this.route.params.subscribe(data => {
-      this.musicService.fetchData(data.data);
+     this.dataService.fetchData(data.data)
+     .subscribe((data) => {
+       this.availableEventlist = data['data'];
+     })
     });
   }
 
