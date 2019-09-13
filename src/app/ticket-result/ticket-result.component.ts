@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
+import { select, Store } from '@ngrx/store';
 import { DataService } from './data.service';
-import { Event } from './event';
+import { Event } from './event.model';
+import EventState from './event.state';
+import * as EventAction from './event.action';
 
 @Component({
   selector: 'app-ticket-result',
@@ -10,16 +15,28 @@ import { Event } from './event';
 })
 export class TicketResultComponent implements OnInit {
 
-  constructor( private route: ActivatedRoute, private dataService : DataService) { }
+  constructor( private route: ActivatedRoute, private dataService : DataService,private store: Store<EventState>) { 
+    this.event$ = store.pipe(select('events'));
+  }
 
-  availableEventlist: Event;
+  event$: Observable<EventState>;
+  EventSubscription: Subscription;
+  EventList: Event[];
 
   ngOnInit() {
     this.route.params.subscribe(data => {
-     this.dataService.fetchData(data.data)
+    /*  this.dataService.fetchData(data.data)
      .subscribe((data) => {
        this.availableEventlist = data['data'];
-     })
+     }) */
+     this.EventSubscription = this.event$
+     .pipe(
+       map(x => {
+         this.EventList = x.Events['data'];
+       })
+     )
+     .subscribe();
+      this.store.dispatch(EventAction.BeginGetEventAction());
     });
   }
 

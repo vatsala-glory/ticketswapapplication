@@ -1,6 +1,6 @@
 import { createAction } from '@ngrx/store';
 
-export const approve = createAction('[Counter Component] Approve');
+export const approve = createAction('[Counter Component] Begin');
 export const decline = createAction('[Counter Component] Decline');
 export const resetState = createAction('[Counter Component] ResetState');
 
