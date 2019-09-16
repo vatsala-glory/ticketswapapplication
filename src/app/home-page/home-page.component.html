@@ -1,11 +1,4 @@
 <div class="homePage">
-    <input type="radio" id="approve" name="state" [checked]="state === 'approve'" (click)="approve()" />Approve
-
-    <input type="radio" id="decline" name="state" [checked]="state == 'decline'" (click)="decline()" />Decline
-
-    <input type="radio" id="reset" name="state" [checked]="state == 'unapproved'" (click)="reset()" />Reset
-
-    <div [ngClass]="state$ | async"></div>
     <div class="homePage-tiles">
         <app-ticket-tiles class="homePage-tiles__Content" (click)="showResults('music')" [tile]="'Concert/Music'"></app-ticket-tiles>
         <app-ticket-tiles class="homePage-tiles__Content" (click)="showResults('sports')" [tile]="'Sports'"></app-ticket-tiles>

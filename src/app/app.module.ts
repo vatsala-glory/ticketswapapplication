@@ -13,7 +13,6 @@ import { counterReducer } from './counter.reducer';
 import { stateReducer } from './manage.reducer';
 import { eventReducer } from './ticket-result/event.reducer';
 import { HeaderModuleModule } from './header-module/header-module.module';
-import { MyCounterComponent } from './my-counter/my-counter.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TicketTilesComponent } from './ticket-tiles/ticket-tiles.component';
@@ -23,7 +22,7 @@ import { DataService } from './ticket-result/data.service';
 
 
 @NgModule({
-  declarations: [AppComponent, MyCounterComponent, HomePageComponent, PageNotFoundComponent, TicketTilesComponent, TicketResultComponent],
+  declarations: [AppComponent, HomePageComponent, PageNotFoundComponent, TicketTilesComponent, TicketResultComponent],
   imports: [
     HttpClientModule,
     AppRoutingModule,
