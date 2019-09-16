@@ -16,19 +16,15 @@ import * as EventAction from './event.action';
 export class TicketResultComponent implements OnInit {
 
   constructor( private route: ActivatedRoute, private dataService : DataService,private store: Store<EventState>) { 
-    this.event$ = store.pipe(select('events'));
+    this.event$ = store.pipe(select('events'));   
   }
 
-  event$: Observable<EventState>;
+  event$: Observable<EventState>; 
   EventSubscription: Subscription;
   EventList: Event[];
 
   ngOnInit() {
-    this.route.params.subscribe(data => {
-    /*  this.dataService.fetchData(data.data)
-     .subscribe((data) => {
-       this.availableEventlist = data['data'];
-     }) */
+this.route.params.subscribe(data => {
      this.EventSubscription = this.event$
      .pipe(
        map(x => {

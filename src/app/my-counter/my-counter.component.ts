@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable, AsyncSubject } from 'rxjs';
 import { increment, decrement, reset } from '../counter.actions';
-import { approve, decline, resetState } from '../manage.action';
 
 @Component({
   selector: 'app-my-counter',
@@ -19,13 +18,7 @@ export class MyCounterComponent implements OnInit {
 
   ngOnInit(){
   this.store.select('count').subscribe(val =>{
-    if(val >= 10) {
-      this.store.dispatch(approve());
-    }else if(val < 0){
-      this.store.dispatch(decline());
-    }else {
-      this.store.dispatch(resetState());
-    }
+   
    });
   }
 

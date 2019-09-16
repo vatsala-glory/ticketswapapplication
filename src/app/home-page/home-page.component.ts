@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { approve, decline, resetState } from '../manage.action';
+import { update } from '../manage.action';
 
 @Component({
   selector: 'app-home-page',
@@ -23,19 +23,8 @@ export class HomePageComponent implements OnInit {
      })
    }
 
-   approve() {
-    this.store.dispatch(approve());
-  }
-
-  decline() {
-    this.store.dispatch(decline());
-  }
-
-  reset() {
-    this.store.dispatch(resetState());
-  }
-
-  showResults(routeState){
+  showResults(routeState){    
+    this.store.dispatch(update({data: routeState}));
     this.router.navigate(['./resultPage/'+ routeState], {state: {data:routeState}});
   }
 }
