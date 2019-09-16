@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { AppRoutingModule } from './app.routing.module';
-import { counterReducer } from './counter.reducer';
 import { stateReducer } from './manage.reducer';
 import { eventReducer } from './ticket-result/event.reducer';
 import { HeaderModuleModule } from './header-module/header-module.module';
@@ -17,7 +16,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TicketTilesComponent } from './ticket-tiles/ticket-tiles.component';
 import { TicketResultComponent } from './ticket-result/ticket-result.component';
-import { DataService } from './ticket-result/data.service';
+import { DataEffect } from './ticket-result/data.effect';
 
 
 
@@ -28,8 +27,8 @@ import { DataService } from './ticket-result/data.service';
     AppRoutingModule,
     BrowserModule,
     HeaderModuleModule,
-    StoreModule.forRoot({ count: counterReducer, state: stateReducer, events: eventReducer }),
-    EffectsModule.forRoot([DataService]),
+    StoreModule.forRoot({ state: stateReducer, events: eventReducer }),
+    EffectsModule.forRoot([DataEffect]),
     NgbModule
   ],
   providers: [
