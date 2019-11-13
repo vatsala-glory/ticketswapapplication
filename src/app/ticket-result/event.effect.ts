@@ -10,7 +10,7 @@ import { Event}  from './event.model';
 @Injectable({
   providedIn: 'root'
 })
-export class DataEffect {
+export class EventEffect {
 
   private url = '/api/v1/'
 

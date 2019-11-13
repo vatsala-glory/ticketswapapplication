@@ -16,7 +16,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TicketTilesComponent } from './ticket-tiles/ticket-tiles.component';
 import { TicketResultComponent } from './ticket-result/ticket-result.component';
-import { DataEffect } from './ticket-result/data.effect';
+import { EventEffect } from './ticket-result/event.effect';
 
 
 
@@ -28,7 +28,7 @@ import { DataEffect } from './ticket-result/data.effect';
     BrowserModule,
     HeaderModuleModule,
     StoreModule.forRoot({ state: stateReducer, events: eventReducer }),
-    EffectsModule.forRoot([DataEffect]),
+    EffectsModule.forRoot([EventEffect]),
     NgbModule
   ],
   providers: [

@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DataEffect } from './data.effect';
+import { EventEffect } from './event.effect';
 
 describe('MusicService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: DataEffect = TestBed.get(DataEffect);
+    const service: EventEffect = TestBed.get(EventEffect);
     expect(service).toBeTruthy();
   });
 });
