@@ -1,0 +1,12 @@
+{
+    "data": [
+        {
+            "id": "10001",
+            "name": "RijksMuseum",
+            "location":"RijksMuseum",
+            "eventStart": "03/10/2019",
+            "eventEnd": "04/10/2019",
+            "ticketsAvaialble": 9
+        }       
+    ]
+}
